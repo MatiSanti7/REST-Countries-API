@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,600;6..12,800&display=swap');
+
+:root {
+    --DarkBlue-DarkModeElements: hsl(209, 23%, 22%);
+    --VeryDarkBlue-DarkModeBackground: hsl(207, 26%, 17%);
+    --VeryDarkBlue-LightModeText: hsl(200, 15%, 8%);
+    --DarkGray-LightModeInput: hsl(0, 0%, 52%);
+    --VeryLightGray-LightModeBackground: hsl(0, 0%, 98%);
+    --White-DarkModeText-LightModeElements: hsl(0, 0%, 100%);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--White-DarkModeText-LightModeElements);
+    font-family: 'Nunito Sans';
+}
+
+nav{
+    height: 8vh;
+    padding: 0 10%;
+    background-color: var(--DarkBlue-DarkModeElements);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mode {
+    cursor: pointer;
+    color: var(--White-DarkModeText-LightModeElements);
+    background-color: transparent;
+    outline: none;
+    border: none;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+}
+
+.mode img {
+    width: 20px;
+}
+
+main {
+    height: 92vh;
+    padding: 30px 10%;
+    background-color: var(--VeryDarkBlue-DarkModeBackground);
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search {
+    display: flex;
+    background-color: var(--DarkBlue-DarkModeElements);
+    width: 500px;
+    height: 50px;
+}
+
+.search input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: white;
+}
+
+.search input::placeholder {
+    color: white;
+}
+
+.search svg {
+    padding: 0 20px;
+    fill: white;
+    width: 20px;
+}
+
+.region {
+    background-color: var(--DarkBlue-DarkModeElements);
+    color: white;
+    border: none;
+    outline: none;
+    width: 200px;
+    padding: 0 20px;
+}
