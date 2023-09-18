@@ -15,15 +15,23 @@ body {
     box-sizing: border-box;
     color: var(--White-DarkModeText-LightModeElements);
     font-family: 'Nunito Sans';
+    background-color: var(--VeryDarkBlue-DarkModeBackground);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 nav{
-    height: 8vh;
-    padding: 0 10%;
+    height: 10vh;
+    width: 100%;
     background-color: var(--DarkBlue-DarkModeElements);
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+h1 {
+    margin-left: 7%;
 }
 
 .mode {
@@ -37,6 +45,7 @@ nav{
     align-items: center;
     gap: 15px;
     font-size: 20px;
+    margin-right: 7%;
 }
 
 .mode img {
@@ -44,24 +53,25 @@ nav{
 }
 
 main {
-    height: 92vh;
-    padding: 30px 10%;
-    background-color: var(--VeryDarkBlue-DarkModeBackground);
+    display: flex;
+    flex-direction: column;
+    width: 90%;
 }
 
 .top {
     display: flex;
     justify-content: space-between;
+    padding: 3vh 0 ;
 }
 
 .search {
     display: flex;
     background-color: var(--DarkBlue-DarkModeElements);
-    width: 500px;
+    width: 40%;
     height: 50px;
 }
 
-.search input {
+.searchInput {
     background-color: transparent;
     border: none;
     outline: none;
@@ -69,11 +79,11 @@ main {
     color: white;
 }
 
-.search input::placeholder {
+.searchInput input::placeholder {
     color: white;
 }
 
-.search svg {
+.searchSvg {
     padding: 0 20px;
     fill: white;
     width: 20px;
@@ -84,6 +94,95 @@ main {
     color: white;
     border: none;
     outline: none;
-    width: 200px;
+    width: 20%;
     padding: 0 20px;
+}
+
+.countries {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 84px;
+}
+
+.country {
+    background-color: var(--DarkBlue-DarkModeElements);
+    width: 365px;
+    height: 425px;
+    cursor: pointer;
+}
+
+.flag {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.flag img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.content {
+    padding: 20px;
+}
+
+.content p {
+    margin-bottom: 5px !important;
+}
+
+.mgpd-0 {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin-bottom: 20px !important;
+}
+
+.fw-800 {
+    font-weight: 800 !important;
+}
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 5vh 0;
+}
+
+.page-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.page-link.active {
+    background-color: var(--DarkBlue-DarkModeElements);
+    border-radius: 50%;
+}
+
+.page-link:visited {
+    color: white;
+}
+
+.bgLight {
+    background-color: var(--VeryLightGray-LightModeBackground);
+}
+
+.elementBgLight {
+    background-color: var(--White-DarkModeText-LightModeElements);
+}
+
+.textBgLight {
+    color: var(--VeryDarkBlue-LightModeText);
+}
+
+.svgBgLight {
+    fill: var(--VeryDarkBlue-LightModeText);
 }
