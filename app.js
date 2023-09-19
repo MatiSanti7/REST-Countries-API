@@ -68,7 +68,7 @@ function renderPage(page) {
     for (let i = limitedStartIndex; i < limitedEndIndex; i++) {
         const country = filteredData[i];
         const countryElement = document.createElement('div');
-        countryElement.classList.add('country');
+        countryElement.classList.add('country', 'country-dark');
         countryElement.innerHTML = `
             <div class="flag">
                 <img src="${country.flags.png}" alt="">
@@ -105,8 +105,70 @@ function renderPaginationLinks(totalPages, currentPage) {
             currentPage = i;
             renderPage(currentPage, totalPages);
         });
-
+        changeTheme()
         paginationContainer.appendChild(pageLink);
     }
 }
 
+const mode = document.getElementById("mode")
+const iconMode = document.getElementById("iconMode")
+const textmode = document.getElementById("textMode")
+const body = document.querySelector("body")
+const nav = document.querySelector("nav")
+const h1 = document.querySelector("h1")
+const search = document.querySelector(".search")
+const searchSvg = document.querySelector(".searchSvg")
+const seaInput = document.querySelector(".searchInput")
+
+let cont = 0
+
+let isTheDark = true
+
+mode.addEventListener("click", ()=>{
+    body.classList.toggle("bgLight")
+    body.classList.toggle("textBgLight")
+    nav.classList.toggle("elementBgLight")
+    h1.classList.toggle("textBgLight")
+    search.classList.toggle("elementBgLight")
+    textmode.classList.toggle("textBgLight")
+    searchSvg.classList.toggle("svgBgLight")
+    seaInput.classList.toggle("textBgLight")
+    regionFilter.classList.toggle("elementBgLight")
+    regionFilter.classList.toggle("textBgLight")
+    
+    if(isTheDark){
+        textmode.textContent = "Light Mode"
+        iconMode.src = "/icons/moon-regular.svg"
+        isTheDark = false
+    }else{
+        textmode.textContent = "Dark Mode"
+        iconMode.src = "/icons/moon-solid.svg"
+        isTheDark = true
+    }
+    changeTheme()
+    cont++;
+})
+
+function changeTheme() {
+    const pagesLinks = document.querySelectorAll('.page-link')
+    pagesLinks.forEach(pl => {
+        if (!isTheDark) {
+            if (pl.classList.contains('active')) {
+                pl.style.color = 'white'; 
+            } else {
+                pl.classList.add('pag-text')
+            }
+        } else {
+            pl.classList.remove('pag-text')
+        }
+    })
+    
+    const allCountry = document.querySelectorAll(".country")
+    allCountry.forEach((country) => {
+        if(!isTheDark){
+            country.classList.remove("country-dark");  
+        }else{
+            country.classList.add("country-dark");  
+        }
+    })  
+}

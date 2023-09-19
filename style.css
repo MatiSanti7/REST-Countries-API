@@ -96,6 +96,7 @@ main {
     outline: none;
     width: 20%;
     padding: 0 20px;
+    cursor: pointer;
 }
 
 .countries {
@@ -106,7 +107,7 @@ main {
 }
 
 .country {
-    background-color: var(--DarkBlue-DarkModeElements);
+    background-color: var(--White-DarkModeText-LightModeElements);
     width: 365px;
     height: 425px;
     cursor: pointer;
@@ -160,15 +161,12 @@ h2 {
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    color: white;
 }
 
 .page-link.active {
     background-color: var(--DarkBlue-DarkModeElements);
     border-radius: 50%;
-}
-
-.page-link:visited {
-    color: white;
 }
 
 .bgLight {
@@ -185,4 +183,13 @@ h2 {
 
 .svgBgLight {
     fill: var(--VeryDarkBlue-LightModeText);
+}
+
+.country-dark {
+    background-color: var(--DarkBlue-DarkModeElements);
+    color: var(--White-DarkModeText-LightModeElements);
+}
+
+.pag-text {
+    color: var(--VeryDarkBlue-LightModeText);
 }
