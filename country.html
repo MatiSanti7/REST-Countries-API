@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <title>Page REST Countries API</title>
+</head>
+<body>
+    <nav>
+        <a href="/" class="tittle">
+            Where is the world?
+        </a>
+        <button class="mode" id="mode">
+            <img src="/icons/moon-solid.svg" alt="" id="iconMode">
+            <p id="textMode">Dark Mode</p>
+        </button>
+    </nav>
+    <main>
+        <div class="top">
+            <button id="back">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="iconBack"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                <p>Back</p>
+            </button>
+        </div>
+        <div class="detail">
+            <img src="" alt="" id="flag">
+            <div class="right">
+                <h2 id="nameCountry"></h2>
+                <div class="bottom">
+                    <section>
+                        <p>Native Name: <span id="nativeName"></span></p>
+                        <p>Population: <span id="population"></span></p>
+                        <p>Region: <span id="region"></span></p>
+                        <p>Sub Region: <span id="subRegion"></span></p>
+                        <p>Capital: <span id="capital"></span></p>
+                    </section>
+                    <section>
+                        <p>Top Level Domain: <span id="topLevelDomain"></span></p>
+                        <p>Currencies: <span id="currencies"></span></p>
+                        <p>Languages: <span id="languages"></span></p>
+                    </section>
+                </div>
+                <section id="border">
+                </section>
+            </div>
+        </div>
+    </main>
+    <script src="detail.js"></script>
+</body>
+</html>

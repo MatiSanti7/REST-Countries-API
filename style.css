@@ -21,6 +21,12 @@ body {
     align-items: center;
 }
 
+.country a {
+    text-decoration: none;
+    color: var(--White-DarkModeText-LightModeElements);
+}
+
+
 nav{
     height: 10vh;
     width: 100%;
@@ -30,8 +36,12 @@ nav{
     justify-content: space-between;
 }
 
-h1 {
+.tittle {
+    color: var(--White-DarkModeText-LightModeElements);
+    text-decoration: none;
+    font-weight: 800;
     margin-left: 7%;
+    font-size: 25px;
 }
 
 .mode {
@@ -55,7 +65,7 @@ h1 {
 main {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 75%;
 }
 
 .top {
@@ -103,12 +113,12 @@ main {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 84px;
+    gap: 22px;
 }
 
 .country {
     background-color: var(--White-DarkModeText-LightModeElements);
-    width: 365px;
+    width: 340px;
     height: 425px;
     cursor: pointer;
 }
@@ -178,7 +188,7 @@ h2 {
 }
 
 .textBgLight {
-    color: var(--VeryDarkBlue-LightModeText);
+    color: var(--VeryDarkBlue-LightModeText) !important;
 }
 
 .svgBgLight {
@@ -192,4 +202,93 @@ h2 {
 
 .pag-text {
     color: var(--VeryDarkBlue-LightModeText);
+}
+
+#back {
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    gap: 10px;
+    border: none;
+    outline: none;
+    background-color: var(--DarkBlue-DarkModeElements);
+    color: var(--White-DarkModeText-LightModeElements);
+    cursor: pointer;
+}
+
+#back p {
+    font-size: 20px;
+    margin: 0;
+}
+
+#iconBack {
+    width: 20px;
+    transform: scaleX(-1);
+    fill: white;
+}
+
+#flag {
+    width: 50%;
+    height: fit-content;
+}
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5vh;
+    height: 500px;
+}
+
+#nameCountry {
+    font-size: 40px;
+    margin: 0 !important;
+}
+
+section p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+section p span {
+    font-weight: 300;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    gap: 35px;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#border {
+    display: flex;
+    justify-content: space-between;
+}
+
+#border p {
+    margin: 0;
+}
+
+#border> p {
+    width: 28%;
+}
+
+.countryBorder {
+    background-color: var(--DarkBlue-DarkModeElements);
+    padding: 5px 20px;
+}
+
+.allCountsBorder {
+    width: 72%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
 }

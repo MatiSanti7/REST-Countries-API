@@ -70,6 +70,7 @@ function renderPage(page) {
         const countryElement = document.createElement('div');
         countryElement.classList.add('country', 'country-dark');
         countryElement.innerHTML = `
+        <a href="country.html?alpha3Code=${country.alpha3Code}">
             <div class="flag">
                 <img src="${country.flags.png}" alt="">
             </div>
@@ -79,6 +80,7 @@ function renderPage(page) {
                 <p class="mgpd-0"><span class="fw-800">Region:</span> ${country.region}</p>
                 <p class="mgpd-0"><span class="fw-800">Capital:</span> ${country.capital}</p>
             </div>
+        </a>
         `;
         countriesContainer.appendChild(countryElement);
     }
@@ -164,11 +166,32 @@ function changeTheme() {
     })
     
     const allCountry = document.querySelectorAll(".country")
+    const alllinkCountry = document.querySelectorAll(".country a")
     allCountry.forEach((country) => {
         if(!isTheDark){
             country.classList.remove("country-dark");  
         }else{
             country.classList.add("country-dark");  
         }
-    })  
+    })
+
+    alllinkCountry.forEach(link => {
+        if(!isTheDark){
+            link.classList.add("textBgLight")
+        }else{
+            link.classList.remove("textBgLight")
+        }
+    })
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Obtén la información del país desde la URL
+    const params = new URLSearchParams(window.location.search);
+    const alpha3Code = params.get("alpha3Code");
+
+    // Verifica si alpha3Code está presente en la URL
+    if (alpha3Code) {
+        // Redirige a la página de detalles de país correspondiente
+        window.location.href = `country.html?alpha3Code=${alpha3Code}`;
+    }
+});
