@@ -213,6 +213,7 @@ h2 {
 
 #flag {
     width: 50%;
+    object-fit: contain;
 }
 
 .detail {
@@ -250,7 +251,7 @@ section p span {
 .bottom {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    gap: 3vw;
 }
 
 #border {
@@ -293,10 +294,10 @@ section p span {
     text-align: left;
     font-size: 16px;
     z-index: 1;
-  }
-  
-  /* Estilo para las opciones del select personalizado */
-  #selectOptions {
+}
+
+/* Estilo para las opciones del select personalizado */
+#selectOptions {
     display: none;
     position: absolute;
     width: 220px;
@@ -305,23 +306,58 @@ section p span {
     border-radius: 0 0 5px 5px;
     z-index: 2;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .option {
+}
+
+.option {
     padding: 10px;
     background-color: var(--ModeElements);
     cursor: pointer;
     transition: background-color 0.2s;
-  }
-  
-  .option:hover {
+}
+
+.option:hover {
     background-color: var(--ModeBackground);
-  }
-  
-  .option.selected {
+}
+
+.option.selected {
     background-color: var(--ModeBackground);
     color: #fff;
-  }
-  .show-options {
+}
+.show-options {
     display: block !important;
-  }
+}
+
+@media only screen and (max-width:768px){
+    .detail {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #flag {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .right {
+        margin: 70px 0;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .bottom {
+        flex-direction: column;
+    }
+
+    #border {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #border>p {
+        width: 100%;
+    }
+
+    .allCountsBorder {
+        gap: 10px;
+    }
+}
