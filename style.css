@@ -1,21 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,600;6..12,800&display=swap');
 
 :root {
-    --DarkBlue-DarkModeElements: hsl(209, 23%, 22%);
-    --VeryDarkBlue-DarkModeBackground: hsl(207, 26%, 17%);
-    --VeryDarkBlue-LightModeText: hsl(200, 15%, 8%);
-    --DarkGray-LightModeInput: hsl(0, 0%, 52%);
-    --VeryLightGray-LightModeBackground: hsl(0, 0%, 98%);
-    --White-DarkModeText-LightModeElements: hsl(0, 0%, 100%);
+    --ModeElements: hsl(209, 23%, 22%);
+    --ModeBackground: hsl(207, 26%, 17%);
+    --ModeText: hsl(0, 0%, 100%);
+}
+
+.light {
+    --ModeElements: hsl(0, 0%, 100%);
+    --ModeBackground: hsl(0, 0%, 95%);
+    --ModeText: hsl(200, 15%, 8%);
 }
 
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: var(--White-DarkModeText-LightModeElements);
-    font-family: 'Nunito Sans';
-    background-color: var(--VeryDarkBlue-DarkModeBackground);
+    color: var(--ModeText);
+    font-family: 'Nunito Sans'!important; 
+    background-color: var(--ModeBackground);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,21 +26,24 @@ body {
 
 .country a {
     text-decoration: none;
-    color: var(--White-DarkModeText-LightModeElements);
+    color: var(--ModeText);
 }
 
+#textMode {
+    color: var(--ModeText);
+}
 
 nav{
     height: 10vh;
     width: 100%;
-    background-color: var(--DarkBlue-DarkModeElements);
+    background-color: var(--ModeElements);
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .tittle {
-    color: var(--White-DarkModeText-LightModeElements);
+    color: var(--ModeText);
     text-decoration: none;
     font-weight: 800;
     margin-left: 7%;
@@ -46,7 +52,7 @@ nav{
 
 .mode {
     cursor: pointer;
-    color: var(--White-DarkModeText-LightModeElements);
+    color: var(--ModeElements);
     background-color: transparent;
     outline: none;
     border: none;
@@ -58,25 +64,31 @@ nav{
     margin-right: 7%;
 }
 
-.mode img {
-    width: 20px;
+.mgpd-0 {
+    margin: 0;
+    padding: 0;
+}
+
+.fw-800 {
+    font-weight: 800;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    width: 75%;
+    width: 80%;
 }
 
 .top {
     display: flex;
     justify-content: space-between;
-    padding: 3vh 0 ;
+    padding: 5vh 0 ;
 }
 
 .search {
     display: flex;
-    background-color: var(--DarkBlue-DarkModeElements);
+    align-items: center;
+    background-color: var(--ModeElements);
     width: 40%;
     height: 50px;
 }
@@ -86,22 +98,32 @@ main {
     border: none;
     outline: none;
     width: 100%;
-    color: white;
+    color: var(--ModeText);
 }
 
-.searchInput input::placeholder {
-    color: white;
+.searchInput::placeholder {
+    color: var(--ModeText);
+    opacity: .5;
 }
 
-.searchSvg {
+.fa-arrow-right {
+    font-size: 20px;
+}
+
+.fa-magnifying-glass {
     padding: 0 20px;
-    fill: white;
+    fill: var(--ModeText);
     width: 20px;
 }
 
+.fa-moon {
+    font-size: 20px;
+    color: var(--ModeText);
+}
+
 .region {
-    background-color: var(--DarkBlue-DarkModeElements);
-    color: white;
+    background-color: var(--ModeElements);
+    color: var(--ModeText);
     border: none;
     outline: none;
     width: 20%;
@@ -113,18 +135,18 @@ main {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 22px;
+    gap: 10px;
 }
 
 .country {
-    background-color: var(--White-DarkModeText-LightModeElements);
-    width: 340px;
-    height: 425px;
+    background-color: var(--ModeElements);
+    width: 296px;
+    height: 400px;
     cursor: pointer;
 }
 
 .flag {
-    height: 50%;
+    height: 40%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -143,17 +165,8 @@ main {
     margin-bottom: 5px !important;
 }
 
-.mgpd-0 {
-    margin: 0;
-    padding: 0;
-}
-
 h2 {
     margin-bottom: 20px !important;
-}
-
-.fw-800 {
-    font-weight: 800 !important;
 }
 
 .pagination {
@@ -161,7 +174,8 @@ h2 {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin: 5vh 0;
+    margin: 3vh 0;
+    gap: 15px;
 }
 
 .page-link {
@@ -171,37 +185,13 @@ h2 {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: white;
+    color: var(--ModeText);
 }
 
 .page-link.active {
-    background-color: var(--DarkBlue-DarkModeElements);
+    background-color: var(--ModeElements);
     border-radius: 50%;
-}
-
-.bgLight {
-    background-color: var(--VeryLightGray-LightModeBackground);
-}
-
-.elementBgLight {
-    background-color: var(--White-DarkModeText-LightModeElements);
-}
-
-.textBgLight {
-    color: var(--VeryDarkBlue-LightModeText) !important;
-}
-
-.svgBgLight {
-    fill: var(--VeryDarkBlue-LightModeText);
-}
-
-.country-dark {
-    background-color: var(--DarkBlue-DarkModeElements);
-    color: var(--White-DarkModeText-LightModeElements);
-}
-
-.pag-text {
-    color: var(--VeryDarkBlue-LightModeText);
+    font-weight: 800;
 }
 
 #back {
@@ -211,8 +201,8 @@ h2 {
     gap: 10px;
     border: none;
     outline: none;
-    background-color: var(--DarkBlue-DarkModeElements);
-    color: var(--White-DarkModeText-LightModeElements);
+    background-color: var(--ModeElements);
+    color: var(--ModeText);
     cursor: pointer;
 }
 
@@ -221,15 +211,8 @@ h2 {
     margin: 0;
 }
 
-#iconBack {
-    width: 20px;
-    transform: scaleX(-1);
-    fill: white;
-}
-
 #flag {
     width: 50%;
-    height: fit-content;
 }
 
 .detail {
@@ -242,6 +225,7 @@ h2 {
 #nameCountry {
     font-size: 40px;
     margin: 0 !important;
+    color: var(--ModeText);
 }
 
 section p {
@@ -249,6 +233,7 @@ section p {
     margin-bottom: 10px;
     font-weight: 600;
     font-size: 20px;
+    color: var(--ModeText);
 }
 
 section p span {
@@ -278,17 +263,65 @@ section p span {
 }
 
 #border> p {
-    width: 28%;
-}
-
-.countryBorder {
-    background-color: var(--DarkBlue-DarkModeElements);
-    padding: 5px 20px;
+    width: 25%;
 }
 
 .allCountsBorder {
-    width: 72%;
+    width: 75%;
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
 }
+
+.allCountsBorder a {
+    text-decoration: none;
+    color: var(--ModeText);
+    background-color: var(--ModeElements);
+    font-size: 20px;
+    padding: 4px 10px;
+}
+
+#regionFilter {
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--ModeElements);
+    width: 200px;
+    text-align: left;
+    font-size: 16px;
+    z-index: 1;
+  }
+  
+  /* Estilo para las opciones del select personalizado */
+  #selectOptions {
+    display: none;
+    position: absolute;
+    width: 220px;
+    border: none;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    z-index: 2;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .option {
+    padding: 10px;
+    background-color: var(--ModeElements);
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .option:hover {
+    background-color: var(--ModeBackground);
+  }
+  
+  .option.selected {
+    background-color: var(--ModeBackground);
+    color: #fff;
+  }
+  .show-options {
+    display: block !important;
+  }
